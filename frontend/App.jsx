@@ -109,7 +109,7 @@ const App = () => {
               initial={{ opacity: 0, x: "100px" }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: "-100px" }}
-              className="flex flex-col gap-4 p-8 justify-center w-[100%] h-[85vh]"
+              className="flex flex-col gap-4 p-8 justify-center w-[100%] "
             >
               <Form />
             </motion.div>

@@ -9,6 +9,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.15.13",
     "@nextui-org/react": "latest",
+    "axios": "^1.6.8",
     "framer-motion": "^10.12.16",
     "react": "latest",
     "react-dom": "^18.2.0",
