@@ -1,4 +1,3 @@
-"use client";
 import React, { useState } from "react";
 import {
   FormControl,
@@ -9,7 +8,7 @@ import {
   TextField,
 } from "@mui/material";
 
-const DashboardForm = ({ onSubmit }) => {
+const Form = ({ onSubmit }) => {
   const [selectedOption1, setSelectedOption1] = useState("");
   const [selectedOption2, setSelectedOption2] = useState("");
   const [submit, setsubmit] = useState(false);
@@ -40,15 +39,15 @@ const DashboardForm = ({ onSubmit }) => {
   };
 
   return (
-    <div className="flex flex-col gap-4 p-8 rounded-lg bg-white bg-opacity-100 w-[90%]   backdrop-filter backdrop-blur-lg  ">
+    <div className="flex flex-col gap-4 rounded-lg  bg-white w-[100%] h-[100%]   ">
       {" "}
-      <h1 className="text-[50px] font-bold pl-8  ml-5 mr-5 ">
-        Welcome to the Dashboard
+      <h1 className="text-[42px] font-bold pl-8  text-center m-5 ">
+        Recommendation
       </h1>
       <div className="flex justify-between">
         <form
           onSubmit={handleSubmit}
-          className=" w-[50%] flex flex-col gap-4 p-8 rounded-l  ml-5 mr-5  "
+          className=" w-[50%] flex flex-col gap-4  rounded-l  ml-5 mr-5  "
         >
           {/* Dropdown 1 */}
           <FormControl className=" mb-2" fullWidth variant="outlined">
@@ -107,14 +106,17 @@ const DashboardForm = ({ onSubmit }) => {
           <Button
             type="submit"
             variant="outlined"
-            color="primary"
-            className="mt-4"
+            style={{
+              color: "black",
+              borderColor: "black",
+              backgroundColor: "#eab308",
+            }}
           >
             Submit
           </Button>
         </form>
         {!submit && (
-          <div className="flex flex-col gap-4 p-8 rounded-lg   w-[50%]  ml-5 mr-5  ">
+          <div className="flex flex-col gap-4 rounded-lg   w-[50%]  ml-5 mr-5  ">
             <div class="grid ">
               <div>
                 <h2 class="text-2xl font-bold mb-4">Stats</h2>
@@ -161,4 +163,4 @@ const DashboardForm = ({ onSubmit }) => {
   );
 };
 
-export default DashboardForm;
+export default Form;
