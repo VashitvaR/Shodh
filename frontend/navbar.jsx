@@ -1,37 +1,49 @@
-import { useState } from 'react'
-import  styles from './Navbar.module.css';
+import { useState } from 'react';
+import styles from './Navbar.css';
+
 function Navbar() {
-  // adding the states 
+  // Adding the state
   const [isActive, setIsActive] = useState(false);
-  //add the active class
+
+  // Add the active class
   const toggleActiveClass = () => {
     setIsActive(!isActive);
   };
-  //clean up function to remove the active class
+
+  // Clean up function to remove the active class
   const removeActive = () => {
-    setIsActive(false)
-  }
+    setIsActive(false);
+  };
+
+  // List of navigation items
+  const navItems = [
+    'HOME',
+    'ABOUT US',
+    'EVENTS',
+    'INFORMATION',
+    'SERVICE',
+    'GALLERY',
+    'CONTACT US'
+  ];
+
   return (
     <div className="App">
       <header className="App-header">
         <nav className={`${styles.navbar}`}>
-          {/* logo */}
-          <a href='#home' className={`${styles.logo}`}>Dev. </a>
+          {/* Logo */}
+          <a href="#home" className={`${styles.logo}`}></a>
+          
+          {/* Navigation menu */}
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
-            <li onClick={removeActive}>
-              <a href='#home' className={`${styles.navLink}`}>Home</a>
-            </li>
-            <li onClick={removeActive}>
-              <a href='#home' className={`${styles.navLink}`}>Catalog</a>
-            </li>
-            <li onClick={removeActive}>
-              <a href='#home' className={`${styles.navLink}`}>All products</a>
-            </li>
-            <li onClick={removeActive}>
-              <a href='#home' className={`${styles.navLink}`}>Contact</a>
-            </li>
+            {navItems.map((item, index) => (
+              <li key={index} onClick={removeActive}>
+                <a href={`#${item}`} className={`${styles.navLink}`}>{item}</a>
+              </li>
+            ))}
           </ul>
-          <div className={`${styles.hamburger} ${isActive ? styles.active : ''}`}  onClick={toggleActiveClass}>
+
+          {/* Hamburger menu */}
+          <div className={`${styles.hamburger} ${isActive ? styles.active : ''}`} onClick={toggleActiveClass}>
             <span className={`${styles.bar}`}></span>
             <span className={`${styles.bar}`}></span>
             <span className={`${styles.bar}`}></span>
@@ -41,5 +53,5 @@ function Navbar() {
     </div>
   );
 }
+
 export default Navbar;
-;
