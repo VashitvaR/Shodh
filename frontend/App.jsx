@@ -1,18 +1,12 @@
-import React, { useState } from "react";
-import Navbar from "./Navbar"; // Import your Navbar component
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import Navbar from "./Navbar"; // Assuming your Navbar component is exported as default
 
 const App = () => {
-  const [activeComponent, setActiveComponent] = useState("Dashboard");
-
-  const handleClick = (component) => {
-    setActiveComponent(component);
-  };
-
   return (
-    <div>
-      {/* Render only the Navbar component */}
-      <Navbar activeComponent={activeComponent} handleClick={handleClick} />
-    </div>
+    <Router>
+      <Navbar />
+    </Router>
   );
 };
 
