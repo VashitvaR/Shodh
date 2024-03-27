@@ -1,20 +1,32 @@
-import { Route, Routes } from "react-router-dom";
-import "./App.css";
-import { Navbar } from "./components/Navbar";
-import { About, Contact, Home, Services } from "./components/pages";
+import React, { useState } from "react";
 
-function App() {
+import "./Navbar.css";
+import { Link, NavLink } from "react-router-dom";
+
+export const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </div>
+    <nav>
+      <Link to="/" className="title">
+        Website
+      </Link>
+      <div className="menu" onClick={() => setMenuOpen(!menuOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul className={menuOpen ? "open" : ""}>
+        <li>
+          <NavLink to="/about">About</NavLink>
+        </li>
+        <li>
+          <NavLink to="/services">Services</NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact">Contact</NavLink>
+        </li>
+      </ul>
+    </nav>
   );
-}
-
-export default App;
+};
