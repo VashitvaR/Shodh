@@ -23,7 +23,8 @@ function Navbar() {
     'INFORMATION',
     'SERVICE',
     'GALLERY',
-    'CONTACT US'
+    'CONTACT US',
+    'MEMBER LOGIN' // Added 'MEMBER LOGIN' here
   ];
 
   return (
@@ -37,7 +38,8 @@ function Navbar() {
           <ul className={`${styles.navMenu} ${isActive ? styles.active : ''}`}>
             {navItems.map((item, index) => (
               <li key={index} onClick={removeActive}>
-                <a href={`#${item}`} className={`${styles.navLink}`}>{item}</a>
+                {/* Applying the rectangle class to the "Member Login" link */}
+                <a href={`#${item}`} className={`${styles.navLink} ${item === 'MEMBER LOGIN' ? 'rectangle' : ''}`}>{item}</a>
               </li>
             ))}
           </ul>

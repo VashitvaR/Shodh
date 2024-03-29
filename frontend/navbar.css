@@ -1,3 +1,60 @@
+/* CSS for rectangle shape */
+
+.navbar {
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    align-items: center; /* Align items vertically */
+  }
+  
+  .navMenu {
+    list-style: none;
+display: flex;
+justify-content: space-evenly;
+  }
+  
+  .navLink {
+    margin-left: 20px; /* Adjust spacing between items */
+  }
+  /* CSS for rectangle shape */
+.rectangle {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    padding: 10px 20px; /* Adjust padding as needed */
+    border: 3px solid black; /* Adjust border properties as needed */
+    border-radius: 5px; /* Adjust border radius as needed */
+    text-decoration: none;
+    color: black; /* Adjust text color as needed */
+    margin-top: -15px; /* Adjust margin-top to shift the rectangle slightly upwards */
+  }
+  /* CSS for navigation menu */
+nav ul {
+    display: flex; /* Use flexbox for horizontal alignment */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    margin-right: 20px; /* Adjust spacing between items */
+  }
+  
+  nav ul li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+  }
+  
+  /* Apply rectangle class to the "Member Login" link */
+  nav ul li:last-child .rectangle a {
+    text-decoration: none;
+    display: block; /* Ensure the link takes full width of the container */
+    margin: 0; /* Reset margin to ensure proper alignment */
+  }
+  
+  
+  /* Apply rectangle class to the "Member Login" link */
+  nav ul li:last-child .rectangle a {
+    text-decoration: none;
+  }
+  
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
